@@ -84,7 +84,8 @@ export const Header = (props: HeaderPropsInterface) => {
           maxWidth={false}
           style={{
             maxWidth: `${CONTAINER_WIDTH / 10}rem`,
-          }}>
+          }}
+        >
           <Link href="/" withoutMaterial title={t('common.homepage')}>
             <Logo className={classes.corporateLogo} />
           </Link>
@@ -102,7 +103,8 @@ export const Header = (props: HeaderPropsInterface) => {
             onClick={() => onMenuClick?.()}
             aria-controls="mobile-menu"
             aria-expanded={isMenuOpen}
-            aria-haspopup="dialog">
+            aria-haspopup="dialog"
+          >
             <Menu />
           </IconButton>
         </Box>

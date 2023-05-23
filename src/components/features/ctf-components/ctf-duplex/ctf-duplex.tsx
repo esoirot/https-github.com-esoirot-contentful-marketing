@@ -50,9 +50,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     lineHeight: 1.56,
     marginTop: theme.spacing(7),
     '& .MuiTypography-body1': {
-      fontSize: '2.5rem',
+      fontSize: '3.0rem',
       [theme.breakpoints.up('xl')]: {
-        fontSize: '1.8rem',
+        fontSize: '3.0rem',
       },
     },
   },
@@ -112,7 +112,8 @@ const DuplexContent = (props: DuplexFieldsFragment) => {
             entryId: props.sys.id,
             fieldId: 'headline',
             locale,
-          })}>
+          })}
+        >
           {optimizeLineBreak(headline)}
         </Typography>
       )}
@@ -124,7 +125,8 @@ const DuplexContent = (props: DuplexFieldsFragment) => {
               entryId: props.sys.id,
               fieldId: 'bodyText',
               locale,
-            })}>
+            })}
+          >
             <CtfRichtext {...bodyText} className={classes.richText} />
           </div>
         </LayoutContext.Provider>
@@ -136,7 +138,8 @@ const DuplexContent = (props: DuplexFieldsFragment) => {
             entryId: props.sys.id,
             fieldId: 'ctaText',
             locale,
-          })}>
+          })}
+        >
           <PageLink page={targetPage} variant="contained" color={colorConfig.buttonColor} isButton>
             {ctaText}
           </PageLink>
@@ -158,7 +161,8 @@ const DuplexImage = (props: DuplexFieldsFragment) => {
       {image?.url ? (
         <div
           className={classes.nextImageContainer}
-          {...ContentfulLivePreview.getProps({ entryId: props.sys.id, fieldId: 'image', locale })}>
+          {...ContentfulLivePreview.getProps({ entryId: props.sys.id, fieldId: 'image', locale })}
+        >
           <CtfImage
             className={clsx([classes.image, imageStyle === 'fixed' && classes.imageFull])}
             src={`${image.url}?w=600`}
@@ -184,7 +188,8 @@ export const CtfDuplex = (props: DuplexFieldsFragment) => {
       maxWidth={false}
       style={{
         backgroundColor: colorConfig.backgroundColor,
-      }}>
+      }}
+    >
       <div className={classes.innerContainer}>
         {containerLayoutBoolean ? (
           <>

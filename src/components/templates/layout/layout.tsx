@@ -48,13 +48,13 @@ export const Layout: React.FC<LayoutPropsInterface> = ({ children }) => {
     <>
       <CssBaseline />
       {/* header */}
-      <Header isMenuOpen={isMenuOpen} onMenuClick={() => setMenuOpen(true)} />
+      {/* <Header isMenuOpen={isMenuOpen} onMenuClick={() => setMenuOpen(true)} /> */}
 
       {/* content */}
       <div className={classes.content}>{children}</div>
 
       {/* footer */}
-      <CtfFooterGql />
+      {/* <CtfFooterGql /> */}
 
       {/* mobile menu */}
       <CtfMobileMenuGql

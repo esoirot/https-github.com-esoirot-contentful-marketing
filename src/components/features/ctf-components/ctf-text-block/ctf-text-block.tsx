@@ -33,7 +33,8 @@ export const CtfTextBlock = ({
       maxWidth={false}
       style={{
         backgroundColor: colorConfig.backgroundColor,
-      }}>
+      }}
+    >
       <div className={classes.innerContainer}>
         <SectionHeadlines
           headline={headline}
@@ -50,7 +51,8 @@ export const CtfTextBlock = ({
           <div
             style={{
               color: colorConfig.textColor,
-            }}>
+            }}
+          >
             <CtfRichtext {...body} />
           </div>
         )}

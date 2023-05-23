@@ -32,7 +32,8 @@ export const CtfImage = ({
         transition: '300ms ease-out',
         transitionProperty: 'opacity',
         opacity: loaded ? 1 : 0,
-      }}>
+      }}
+    >
       <Image
         onLoad={() => {
           setLoaded(true);

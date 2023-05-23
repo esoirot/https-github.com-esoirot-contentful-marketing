@@ -111,7 +111,8 @@ export const Link = (props: Props) => {
         size={size}
         startIcon={startIcon}
         endIcon={endIcon}
-        title={title}>
+        title={title}
+      >
         {children}
       </MuiButton>
     ) : (
@@ -123,7 +124,8 @@ export const Link = (props: Props) => {
         target={props.target}
         rel="noopener noreferrer"
         onClick={() => onClick && onClick()}
-        title={title}>
+        title={title}
+      >
         {children}
       </MuiLink>
     );
@@ -151,7 +153,8 @@ export const Link = (props: Props) => {
           size={size}
           startIcon={startIcon}
           endIcon={endIcon}
-          title={title}>
+          title={title}
+        >
           {children}
         </MuiButton>
       </NextLink>
@@ -166,7 +169,8 @@ export const Link = (props: Props) => {
         underline={underlineStyle}
         color={color}
         onClick={() => onClick && onClick()}
-        title={title}>
+        title={title}
+      >
         {children}
       </MuiLink>
     </NextLink>

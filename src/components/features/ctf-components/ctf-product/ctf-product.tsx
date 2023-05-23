@@ -153,7 +153,8 @@ export const CtfProduct = (props: ProductFieldsFragment) => {
                 variant="h1"
                 component="h2"
                 className={classes.headline}
-                {...ContentfulLivePreview.getProps({ entryId: id, fieldId: 'name', locale })}>
+                {...ContentfulLivePreview.getProps({ entryId: id, fieldId: 'name', locale })}
+              >
                 {name}
               </Typography>
             )}
@@ -164,7 +165,8 @@ export const CtfProduct = (props: ProductFieldsFragment) => {
                     entryId: id,
                     fieldId: 'description',
                     locale,
-                  })}>
+                  })}
+                >
                   <CtfRichtext {...description} className={classes.body} />
                 </div>
               </LayoutContext.Provider>
@@ -177,7 +179,8 @@ export const CtfProduct = (props: ProductFieldsFragment) => {
                 entryId: id,
                 fieldId: 'featuredImage',
                 locale,
-              })}>
+              })}
+            >
               <CtfAsset {...featuredImage} showDescription={false} className={classes.imageInner} />
             </div>
           )}
@@ -203,7 +206,8 @@ export const CtfProduct = (props: ProductFieldsFragment) => {
                                 entryId: item.sys.id,
                                 fieldId: 'name',
                                 locale,
-                              })}>
+                              })}
+                            >
                               {item.name}
                             </Typography>
                             <Box component="dd" margin={0} className={classes.featureValue}>
@@ -213,7 +217,8 @@ export const CtfProduct = (props: ProductFieldsFragment) => {
                                     entryId: item.sys.id,
                                     fieldId: 'longDescription',
                                     locale,
-                                  })}>
+                                  })}
+                                >
                                   <CtfRichtext {...item.longDescription} />
                                 </div>
                               )}

@@ -15,11 +15,14 @@ import { getColorConfigFromPalette, HEADER_HEIGHT_MD, HEADER_HEIGHT } from '@src
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     alignItems: 'center',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
+    backgroundSize: '100% 100%', // contain',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center top',
     display: 'flex',
     overflow: 'hidden',
     position: 'relative',
+    width: '100%',
+    height: '100vh',
   },
 
   fullScreen: {
@@ -36,9 +39,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginLeft: 'auto',
     marginRight: 'auto',
     maxWidth: '125.8rem',
-    padding: theme.spacing(33, 0, 33),
+    // padding: theme.spacing(33, 0, 33),
     position: 'relative',
-    width: '100%',
     '@media (min-height: 91.2em)': {
       padding: theme.spacing(39, 0, 39),
     },
@@ -74,7 +76,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     lineHeight: 1.08,
     maxWidth: '44rem',
     [theme.breakpoints.up('xl')]: {
-      fontSize: '3.8rem',
+      fontSize: '4.0rem',
     },
   },
 
@@ -84,9 +86,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginTop: theme.spacing(6),
     maxWidth: '46.9rem',
     '& p': {
-      fontSize: '2.5rem',
+      fontSize: '3.0rem',
       [theme.breakpoints.up('xl')]: {
-        fontSize: '2.5rem',
+        fontSize: '3.0rem',
       },
     },
   },
@@ -133,7 +135,8 @@ export const CtfHeroBanner = (props: HeroBannerFieldsFragment) => {
         backgroundImage:
           imageStyle === 'full' && backgroundImage ? `url(${backgroundImage!})` : undefined,
         backgroundColor: colorConfig.backgroundColor,
-      }}>
+      }}
+    >
       {imageStyle === 'partial' && backgroundImage && (
         <div className={classes.partialBgContainer}>
           <div
@@ -157,7 +160,8 @@ export const CtfHeroBanner = (props: HeroBannerFieldsFragment) => {
             variant="h1"
             className={classes.headline}
             style={{ color: colorConfig.headlineColor }}
-            {...ContentfulLivePreview.getProps({ entryId: id, fieldId: 'headline', locale })}>
+            {...ContentfulLivePreview.getProps({ entryId: id, fieldId: 'headline', locale })}
+          >
             {headline}
           </Typography>
         )}
@@ -165,7 +169,8 @@ export const CtfHeroBanner = (props: HeroBannerFieldsFragment) => {
           <LayoutContext.Provider value={{ ...defaultLayout, parent: 'hero-banner-body' }}>
             <div
               style={{ color: colorConfig.textColor }}
-              {...ContentfulLivePreview.getProps({ entryId: id, fieldId: 'bodyText', locale })}>
+              {...ContentfulLivePreview.getProps({ entryId: id, fieldId: 'bodyText', locale })}
+            >
               <CtfRichtext {...bodyText} className={classes.body} />
             </div>
           </LayoutContext.Provider>
@@ -176,7 +181,8 @@ export const CtfHeroBanner = (props: HeroBannerFieldsFragment) => {
               page={targetPage}
               variant="contained"
               color={colorConfig.buttonColor}
-              isButton>
+              isButton
+            >
               {ctaText}
             </PageLink>
           </div>

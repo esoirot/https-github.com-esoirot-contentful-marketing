@@ -133,21 +133,24 @@ export const CtfQuote = (props: QuoteFieldsFragment) => {
         maxWidth={false}
         style={{
           backgroundColor: colorConfig.backgroundColor,
-        }}>
+        }}
+      >
         <div className={classes.innerContainer}>
           <div
             className={clsx(
               classes.innerBody,
               classes[`innerBody-${containerLayout}`],
               backgroundImage ? undefined : classes.innerBodyFull,
-            )}>
+            )}
+          >
             {quote && (
               <div
                 {...ContentfulLivePreview.getProps({ entryId: id, fieldId: 'quote', locale })}
                 style={{
                   color: colorConfig.textColor,
                   textAlign: quoteAlignment,
-                }}>
+                }}
+              >
                 <CtfRichtext {...quote} />
               </div>
             )}
@@ -158,7 +161,8 @@ export const CtfQuote = (props: QuoteFieldsFragment) => {
               entryId: id,
               fieldId: 'image',
               locale,
-            })}>
+            })}
+          >
             {backgroundImage && (
               <div
                 className={classes.imageFixed}

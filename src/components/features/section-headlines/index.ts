@@ -1,1 +1,1 @@
-export * from './section-headlines'
+export * from './section-headlines';

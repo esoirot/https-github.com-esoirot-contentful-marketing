@@ -1,1 +1,1 @@
-export * from './card-leadership'
+export * from './card-leadership';
