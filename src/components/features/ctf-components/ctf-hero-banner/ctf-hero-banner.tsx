@@ -15,9 +15,9 @@ import { getColorConfigFromPalette, HEADER_HEIGHT_MD, HEADER_HEIGHT } from '@src
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     alignItems: 'center',
-    backgroundSize: '100% 100%', // contain',
+    backgroundSize: 'contain', // contain',
     backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center top',
+    backgroundPosition: 'center',
     display: 'flex',
     overflow: 'hidden',
     position: 'relative',
@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginLeft: 'auto',
     marginRight: 'auto',
     maxWidth: '125.8rem',
-    // padding: theme.spacing(33, 0, 33),
+    padding: theme.spacing(33, 0, 33),
     position: 'relative',
     '@media (min-height: 91.2em)': {
       padding: theme.spacing(39, 0, 39),
