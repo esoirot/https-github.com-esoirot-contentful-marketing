@@ -24,7 +24,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     width: '100%',
     height: '100vh',
   },
-
   fullScreen: {
     minHeight: `calc(100vh - ${HEADER_HEIGHT_MD})`,
     [theme.breakpoints.up('md')]: {
@@ -34,18 +33,17 @@ const useStyles = makeStyles((theme: Theme) => ({
       minHeight: '91.2rem',
     },
   },
-
   innerContainer: {
-    marginLeft: 'auto',
-    marginRight: 'auto',
+    bottom: '1rem',
+    width: '100%',
+    marginLeft: '8rem',
     maxWidth: '125.8rem',
     padding: theme.spacing(33, 0, 33),
-    position: 'relative',
+    position: 'absolute',
     '@media (min-height: 91.2em)': {
       padding: theme.spacing(39, 0, 39),
     },
   },
-
   partialBgContainer: {
     display: 'none',
     height: '100%',
@@ -59,7 +57,6 @@ const useStyles = makeStyles((theme: Theme) => ({
       display: 'block',
     },
   },
-
   partialBg: {
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -69,17 +66,15 @@ const useStyles = makeStyles((theme: Theme) => ({
     top: 0,
     width: '50%',
   },
-
   headline: {
     fontSize: '3rem',
     fontWeight: 800,
     lineHeight: 1.08,
     maxWidth: '44rem',
     [theme.breakpoints.up('xl')]: {
-      fontSize: '4.0rem',
+      fontSize: '3.0rem',
     },
   },
-
   body: {
     fontWeight: 400,
     lineHeight: 1.56,
@@ -93,7 +88,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   ctaContainer: {
-    marginTop: theme.spacing(6),
+    marginTop: theme.spacing(2),
   },
 }));
 
@@ -177,13 +172,8 @@ export const CtfHeroBanner = (props: HeroBannerFieldsFragment) => {
         )}
         {targetPage && ctaText && (
           <div className={classes.ctaContainer}>
-            <PageLink
-              page={targetPage}
-              variant="contained"
-              color={colorConfig.buttonColor}
-              isButton
-            >
-              {ctaText}
+            <PageLink page={targetPage} variant="contained" color={colorConfig.buttonColor}>
+              <u>{ctaText}</u>
             </PageLink>
           </div>
         )}
